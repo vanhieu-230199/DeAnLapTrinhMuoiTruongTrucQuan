@@ -199,6 +199,7 @@ a:hover{
 }
 #studentId{
 	transition: .5s;
+	color: white;
 }
 #teacherId{
 	transition: .5s;

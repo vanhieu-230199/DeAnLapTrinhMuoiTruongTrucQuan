@@ -1,16 +1,136 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Quan Ly Sinh Vien</title>
+    <title>Trang Chủ</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/calendar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+    <script>
+      $(document).ready(function(){
+        $(".hamburger").click(function(){
+           $(".wrapper").toggleClass("collapse");
+        });
+      });
+    </script>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-      
+      <div class="wrapper">
+        <div class="top_navbar">
+          <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="top_menu">
+            <div class="logo">GDU Management</div>
+            <ul>
+              <li><a href="#"><i class="fas fa-search"></i></a></li>
+              <li><a href="#"><i class="fas fa-bell"></i></a></li>
+              <li><a href="#"><i class="fas fa-user"></i></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sidebar">
+          <ul>
+            <li><a href="#" >
+              <span class="icon"><i class="fas fa-comments" aria-hidden="true"></i></span>
+              <span class="title">Thông Báo</span>
+            </a></li>
+            <li><a href="#">
+              <span class="icon"><i class="fas fa-pencil-alt" aria-hidden="true"></i></span>
+              <span class="title">Khóa Học</span>
+            </a></li>
+            <li><a href="#">
+              <span class="icon"><i class="fas fa-edit" aria-hidden="true"></i></span>
+              <span class="title">Điểm</span>
+            </a></li>
+            <li><a href="#" class="active">
+              <span class="icon"><i class="fas fa-calendar-alt" aria-hidden="true"></i></span>
+              <span class="title">Thời Khóa Biểu</span>
+            </a></li>
+            <li><a href="#">
+              <span class="icon"><i class="fas fa-address-book" aria-hidden="true"></i></span>
+              <span class="title">Lớp</span>
+            </a></li>
+          </ul>
+        </div>
+
+        <div class="main_container">
+          <div class="item">
+            <h1>Thời Khóa Biểu</h1>
+
+            <div class="month">      
+              <ul>
+                <li class="prev">&#10094;</li>
+                <li class="next">&#10095;</li>
+                <li>
+                  August<br>
+                  <span style="font-size:18px">2017</span>
+                </li>
+              </ul>
+            </div>
+            
+            <ul class="weekdays">
+              <li>Mo</li>
+              <li>Tu</li>
+              <li>We</li>
+              <li>Th</li>
+              <li>Fr</li>
+              <li>Sa</li>
+              <li>Su</li>
+            </ul>
+            
+            <ul class="days">  
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+              <li>6</li>
+              <li>7</li>
+              <li>8</li>
+              <li>9</li>
+              <li><span class="active">10</span></li>
+              <li>11</li>
+              <li>12</li>
+              <li>13</li>
+              <li>14</li>
+              <li>15</li>
+              <li>16</li>
+              <li>17</li>
+              <li>18</li>
+              <li>19</li>
+              <li>20</li>
+              <li>21</li>
+              <li>22</li>
+              <li>23</li>
+              <li>24</li>
+              <li>25</li>
+              <li>26</li>
+              <li>27</li>
+              <li>28</li>
+              <li>29</li>
+              <li>30</li>
+              <li>31</li>
+            </ul>
+          </div>
+          
+        </div>
+
+      </div>
+
+
+
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
