@@ -16,24 +16,39 @@ namespace GDU_Management
         {
             InitializeComponent();
             NgayGio();
+            helloAdmin();
         }
 
+        //DANH SÁCH HÀM
         
+            //hàm lấy ngày giờ
         public void NgayGio()
         {
             //get day
             DateTime ngay =  DateTime.Now;
             lblDay.Text = ngay.ToString("dd/MM/yyyy");
 
-            // text hello admin
+            //get thời gian
+            timerTime.Start();
+        }
+
+        //hàm hello admin
+        public void helloAdmin()
+        {
             lblTitle.Text = "Hello Admin...!!! ^...^";
             timerHelloAdmin.Enabled = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //hàm vào form QLSV
+        public void goToQLSV()
         {
-            this.Close();
+            this.Hide();
+            frmQuanLySinhVien frmQlsv = new frmQuanLySinhVien();
+            frmQlsv.ShowDialog();
         }
+
+        // KẾT THÚC DS HÀM
+  
 
         private void GDUManagement_Load(object sender, EventArgs e)
         {
@@ -78,6 +93,28 @@ namespace GDU_Management
                 this.Hide();
                 frmLogin frmlogin = new frmLogin();
                 frmlogin.ShowDialog();
-            }        }
+            }       
+        }
+
+        private void pnQuanLySinhVien_MouseClick(object sender, MouseEventArgs e)
+        {
+            goToQLSV();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            goToQLSV();
+        }
+
+        private void lblQLSV_Click_1(object sender, EventArgs e)
+        {
+            goToQLSV();
+        }
+
+        private void timerTime_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToLongTimeString();
+        }
+
     }
 }

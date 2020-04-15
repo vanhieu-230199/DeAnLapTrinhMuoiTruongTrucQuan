@@ -73,6 +73,16 @@ namespace GDU_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_gdumanagement_ps_13 {
+            get {
+                object obj = ResourceManager.GetObject("icon_gdumanagement_ps_13", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_gdumanagement_ps_40 {
             get {
                 object obj = ResourceManager.GetObject("icon_gdumanagement_ps_40", resourceCulture);
@@ -93,6 +103,26 @@ namespace GDU_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_logo_ps_02 {
+            get {
+                object obj = ResourceManager.GetObject("icon_logo_ps_02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_logo_ps_08 {
+            get {
+                object obj = ResourceManager.GetObject("icon_logo_ps_08", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_quan_ly_sinh_vien {
             get {
                 object obj = ResourceManager.GetObject("icon_quan_ly_sinh_vien", resourceCulture);
@@ -106,6 +136,46 @@ namespace GDU_Management.Properties {
         internal static System.Drawing.Bitmap icon_thoi_khoa_bieu {
             get {
                 object obj = ResourceManager.GetObject("icon_thoi_khoa_bieu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons_add_new_user {
+            get {
+                object obj = ResourceManager.GetObject("icons-add-new-user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons_delete {
+            get {
+                object obj = ResourceManager.GetObject("icons-delete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons_save {
+            get {
+                object obj = ResourceManager.GetObject("icons-save", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons_updatepng {
+            get {
+                object obj = ResourceManager.GetObject("icons-updatepng", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

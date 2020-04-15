@@ -46,25 +46,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmDanhSachLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDanhSachLop.Designer.cs">
+      <DependentUpon>frmDanhSachLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDanhSachNganh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDanhSachNganh.Designer.cs">
+      <DependentUpon>frmDanhSachNganh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanLySinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLySinhVien.Designer.cs">
+      <DependentUpon>frmQuanLySinhVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="GDUManagement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GDUManagement.Designer.cs">
       <DependentUpon>GDUManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmDanhSachLop.resx">
+      <DependentUpon>frmDanhSachLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDanhSachNganh.resx">
+      <DependentUpon>frmDanhSachNganh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLySinhVien.resx">
+      <DependentUpon>frmQuanLySinhVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GDUManagement.resx">
       <DependentUpon>GDUManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -148,6 +175,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_gdemanagement_2_50.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_gdumanagement_ps_05.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_gdumanagement_ps_15.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_gdumanagement_ps_13.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_logo_ps_08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_logo_ps_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons-add-new-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons-save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons-updatepng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons-delete.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
