@@ -40,8 +40,8 @@ namespace GDU_Management
         private void btnLogin_Click(object sender, EventArgs e)
         {
             this.Hide();
-            GDUManagement gduManagement = new GDUManagement();
-            gduManagement.ShowDialog();
+            GDUManagement gdu = new GDUManagement();
+            gdu.ShowDialog();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
