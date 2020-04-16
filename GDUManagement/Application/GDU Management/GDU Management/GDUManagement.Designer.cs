@@ -37,6 +37,8 @@
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.btnThoatChuongTrinh = new System.Windows.Forms.Button();
             this.pnMenu = new System.Windows.Forms.Panel();
+            this.pnQuanLySinhVien = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnDiemSinhVien = new System.Windows.Forms.Panel();
             this.lblDSV = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,7 +46,7 @@
             this.lblTKB = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pnPhanCongCongViec = new System.Windows.Forms.Panel();
-            this.lblPCCV = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.pnStatusTopLeft = new System.Windows.Forms.Panel();
             this.grbTime = new System.Windows.Forms.GroupBox();
@@ -54,20 +56,19 @@
             this.lblLogoGDU = new System.Windows.Forms.Panel();
             this.pnLogo = new System.Windows.Forms.Panel();
             this.timerHelloAdmin = new System.Windows.Forms.Timer(this.components);
-            this.pnQuanLySinhVien = new System.Windows.Forms.Panel();
+            this.timerTime = new System.Windows.Forms.Timer(this.components);
             this.lblQLSV = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.pnContents.SuspendLayout();
             this.pnTitle.SuspendLayout();
             this.panel10.SuspendLayout();
             this.pnMenu.SuspendLayout();
+            this.pnQuanLySinhVien.SuspendLayout();
             this.pnDiemSinhVien.SuspendLayout();
             this.pnThoiKhoaBieu.SuspendLayout();
             this.pnPhanCongCongViec.SuspendLayout();
             this.pnStatusTopLeft.SuspendLayout();
             this.grbTime.SuspendLayout();
             this.grbDay.SuspendLayout();
-            this.pnQuanLySinhVien.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnContents
@@ -136,26 +137,30 @@
             // 
             // btnDangXuat
             // 
+            this.btnDangXuat.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnDangXuat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDangXuat.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
             this.btnDangXuat.Location = new System.Drawing.Point(15, 15);
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.Size = new System.Drawing.Size(215, 43);
             this.btnDangXuat.TabIndex = 8;
             this.btnDangXuat.Text = "Đăng Xuất";
-            this.btnDangXuat.UseVisualStyleBackColor = true;
+            this.btnDangXuat.UseVisualStyleBackColor = false;
             this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // btnThoatChuongTrinh
             // 
+            this.btnThoatChuongTrinh.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btnThoatChuongTrinh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThoatChuongTrinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoatChuongTrinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoatChuongTrinh.ForeColor = System.Drawing.Color.White;
             this.btnThoatChuongTrinh.Location = new System.Drawing.Point(271, 15);
             this.btnThoatChuongTrinh.Name = "btnThoatChuongTrinh";
             this.btnThoatChuongTrinh.Size = new System.Drawing.Size(215, 43);
             this.btnThoatChuongTrinh.TabIndex = 9;
             this.btnThoatChuongTrinh.Text = "Thoát Chương Trình";
-            this.btnThoatChuongTrinh.UseVisualStyleBackColor = true;
+            this.btnThoatChuongTrinh.UseVisualStyleBackColor = false;
             this.btnThoatChuongTrinh.Click += new System.EventHandler(this.btnThoatChuongTrinh_Click);
             // 
             // pnMenu
@@ -172,6 +177,28 @@
             this.pnMenu.Size = new System.Drawing.Size(517, 508);
             this.pnMenu.TabIndex = 12;
             // 
+            // pnQuanLySinhVien
+            // 
+            this.pnQuanLySinhVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnQuanLySinhVien.Controls.Add(this.lblQLSV);
+            this.pnQuanLySinhVien.Controls.Add(this.label2);
+            this.pnQuanLySinhVien.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnQuanLySinhVien.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.pnQuanLySinhVien.Location = new System.Drawing.Point(25, 56);
+            this.pnQuanLySinhVien.Name = "pnQuanLySinhVien";
+            this.pnQuanLySinhVien.Size = new System.Drawing.Size(471, 104);
+            this.pnQuanLySinhVien.TabIndex = 5;
+            this.pnQuanLySinhVien.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnQuanLySinhVien_MouseClick);
+            // 
+            // label2
+            // 
+            this.label2.Image = global::GDU_Management.Properties.Resources.icon_quan_ly_sinh_vien;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 102);
+            this.label2.TabIndex = 0;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // pnDiemSinhVien
             // 
             this.pnDiemSinhVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -187,14 +214,12 @@
             // lblDSV
             // 
             this.lblDSV.AutoSize = true;
-            this.lblDSV.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDSV.Location = new System.Drawing.Point(109, 31);
+            this.lblDSV.Font = new System.Drawing.Font("Microsoft Uighur", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDSV.Location = new System.Drawing.Point(108, 34);
             this.lblDSV.Name = "lblDSV";
-            this.lblDSV.Size = new System.Drawing.Size(240, 36);
+            this.lblDSV.Size = new System.Drawing.Size(248, 53);
             this.lblDSV.TabIndex = 1;
             this.lblDSV.Text = "ĐIỂM SINH VIÊN";
-            this.lblDSV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblDSV.UseWaitCursor = true;
             // 
             // label4
             // 
@@ -219,14 +244,12 @@
             // lblTKB
             // 
             this.lblTKB.AutoSize = true;
-            this.lblTKB.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTKB.Location = new System.Drawing.Point(109, 31);
+            this.lblTKB.Font = new System.Drawing.Font("Microsoft Uighur", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTKB.Location = new System.Drawing.Point(109, 27);
             this.lblTKB.Name = "lblTKB";
-            this.lblTKB.Size = new System.Drawing.Size(248, 36);
-            this.lblTKB.TabIndex = 1;
+            this.lblTKB.Size = new System.Drawing.Size(261, 53);
+            this.lblTKB.TabIndex = 2;
             this.lblTKB.Text = "THỜI KHÓA BIỂU";
-            this.lblTKB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblTKB.UseWaitCursor = true;
             // 
             // label6
             // 
@@ -239,7 +262,7 @@
             // pnPhanCongCongViec
             // 
             this.pnPhanCongCongViec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnPhanCongCongViec.Controls.Add(this.lblPCCV);
+            this.pnPhanCongCongViec.Controls.Add(this.label1);
             this.pnPhanCongCongViec.Controls.Add(this.label8);
             this.pnPhanCongCongViec.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnPhanCongCongViec.ForeColor = System.Drawing.SystemColors.HotTrack;
@@ -248,17 +271,15 @@
             this.pnPhanCongCongViec.Size = new System.Drawing.Size(471, 104);
             this.pnPhanCongCongViec.TabIndex = 7;
             // 
-            // lblPCCV
+            // label1
             // 
-            this.lblPCCV.AutoSize = true;
-            this.lblPCCV.Font = new System.Drawing.Font("Microsoft YaHei", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPCCV.Location = new System.Drawing.Point(109, 31);
-            this.lblPCCV.Name = "lblPCCV";
-            this.lblPCCV.Size = new System.Drawing.Size(318, 32);
-            this.lblPCCV.TabIndex = 1;
-            this.lblPCCV.Text = "PHÂN CÔNG CÔNG VIỆC";
-            this.lblPCCV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblPCCV.UseWaitCursor = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Uighur", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(109, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(296, 43);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "PHÂN CÔNG CÔNG VIỆC";
             // 
             // label8
             // 
@@ -328,9 +349,9 @@
             // 
             this.lblLogoGDU.BackgroundImage = global::GDU_Management.Properties.Resources.logo_03_03;
             this.lblLogoGDU.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.lblLogoGDU.Location = new System.Drawing.Point(268, 3);
+            this.lblLogoGDU.Location = new System.Drawing.Point(231, 3);
             this.lblLogoGDU.Name = "lblLogoGDU";
-            this.lblLogoGDU.Size = new System.Drawing.Size(208, 138);
+            this.lblLogoGDU.Size = new System.Drawing.Size(245, 138);
             this.lblLogoGDU.TabIndex = 4;
             // 
             // pnLogo
@@ -349,37 +370,20 @@
             // 
             this.timerHelloAdmin.Tick += new System.EventHandler(this.timerHelloAdmin_Tick);
             // 
-            // pnQuanLySinhVien
+            // timerTime
             // 
-            this.pnQuanLySinhVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnQuanLySinhVien.Controls.Add(this.lblQLSV);
-            this.pnQuanLySinhVien.Controls.Add(this.label2);
-            this.pnQuanLySinhVien.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnQuanLySinhVien.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.pnQuanLySinhVien.Location = new System.Drawing.Point(25, 56);
-            this.pnQuanLySinhVien.Name = "pnQuanLySinhVien";
-            this.pnQuanLySinhVien.Size = new System.Drawing.Size(471, 104);
-            this.pnQuanLySinhVien.TabIndex = 5;
+            this.timerTime.Tick += new System.EventHandler(this.timerTime_Tick);
             // 
             // lblQLSV
             // 
             this.lblQLSV.AutoSize = true;
-            this.lblQLSV.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQLSV.Location = new System.Drawing.Point(109, 31);
+            this.lblQLSV.Font = new System.Drawing.Font("Microsoft Uighur", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQLSV.Location = new System.Drawing.Point(108, 32);
             this.lblQLSV.Name = "lblQLSV";
-            this.lblQLSV.Size = new System.Drawing.Size(290, 36);
-            this.lblQLSV.TabIndex = 1;
+            this.lblQLSV.Size = new System.Drawing.Size(290, 53);
+            this.lblQLSV.TabIndex = 2;
             this.lblQLSV.Text = "QUẢN LÝ SINH VIÊN";
-            this.lblQLSV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblQLSV.UseWaitCursor = true;
-            // 
-            // label2
-            // 
-            this.label2.Image = global::GDU_Management.Properties.Resources.icon_quan_ly_sinh_vien;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 102);
-            this.label2.TabIndex = 0;
+            this.lblQLSV.Click += new System.EventHandler(this.lblQLSV_Click_1);
             // 
             // GDUManagement
             // 
@@ -396,6 +400,8 @@
             this.pnTitle.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.pnMenu.ResumeLayout(false);
+            this.pnQuanLySinhVien.ResumeLayout(false);
+            this.pnQuanLySinhVien.PerformLayout();
             this.pnDiemSinhVien.ResumeLayout(false);
             this.pnDiemSinhVien.PerformLayout();
             this.pnThoiKhoaBieu.ResumeLayout(false);
@@ -407,8 +413,6 @@
             this.grbTime.PerformLayout();
             this.grbDay.ResumeLayout(false);
             this.grbDay.PerformLayout();
-            this.pnQuanLySinhVien.ResumeLayout(false);
-            this.pnQuanLySinhVien.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -420,13 +424,10 @@
         private System.Windows.Forms.Label lblDay;
         private System.Windows.Forms.Panel lblLogoGDU;
         private System.Windows.Forms.Panel pnPhanCongCongViec;
-        private System.Windows.Forms.Label lblPCCV;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel pnThoiKhoaBieu;
-        private System.Windows.Forms.Label lblTKB;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel pnDiemSinhVien;
-        private System.Windows.Forms.Label lblDSV;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnThoatChuongTrinh;
         private System.Windows.Forms.Button btnDangXuat;
@@ -441,7 +442,11 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Timer timerHelloAdmin;
         private System.Windows.Forms.Panel pnQuanLySinhVien;
-        private System.Windows.Forms.Label lblQLSV;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblDSV;
+        private System.Windows.Forms.Label lblTKB;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timerTime;
+        private System.Windows.Forms.Label lblQLSV;
     }
 }

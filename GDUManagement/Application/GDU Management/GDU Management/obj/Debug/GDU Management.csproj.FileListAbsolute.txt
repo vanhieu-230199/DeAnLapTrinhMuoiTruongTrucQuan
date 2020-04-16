@@ -9,3 +9,6 @@ D:\GDU\Hoc_Ki_7\LapTrinhMoiTruongTrucQuan\DeAnCuoiKi\App\GDUManager\GDU Manageme
 D:\GDU\Hoc_Ki_7\LapTrinhMoiTruongTrucQuan\DeAnCuoiKi\App\GDUManager\GDU Management\GDU Management\obj\Debug\GDU Management.exe
 D:\GDU\Hoc_Ki_7\LapTrinhMoiTruongTrucQuan\DeAnCuoiKi\App\GDUManager\GDU Management\GDU Management\obj\Debug\GDU Management.pdb
 D:\GDU\Hoc_Ki_7\LapTrinhMoiTruongTrucQuan\DeAnCuoiKi\App\GDUManager\GDU Management\GDU Management\obj\Debug\GDU_Management.GDUManagement.resources
+D:\GDU\Hoc_Ki_7\LapTrinhMoiTruongTrucQuan\DeAnCuoiKi\App\GDUManager\GDU Management\GDU Management\obj\Debug\GDU_Management.frmQuanLySinhVien.resources
+D:\GDU\Hoc_Ki_7\LapTrinhMoiTruongTrucQuan\DeAnCuoiKi\App\GDUManager\GDU Management\GDU Management\obj\Debug\GDU_Management.frmDanhSachNganh.resources
+D:\GDU\Hoc_Ki_7\LapTrinhMoiTruongTrucQuan\DeAnCuoiKi\App\GDUManager\GDU Management\GDU Management\obj\Debug\GDU_Management.frmDanhSachLop.resources
