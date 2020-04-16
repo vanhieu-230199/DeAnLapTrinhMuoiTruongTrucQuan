@@ -3,14 +3,15 @@
   <head>
     <title>Trang Chủ</title>
     <!-- Required meta tags -->
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="./css/login.css">
-    <link rel="stylesheet" href="./css/calendar.css">
+    <link rel="stylesheet" href="./css/semester.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    
+
     <script>
       $(document).ready(function(){
         $(".hamburger").click(function(){
@@ -18,7 +19,7 @@
         });
       });
     </script>
-
+  
   </head>
   <body>
       <div class="wrapper">
@@ -41,14 +42,14 @@
         <div class="sidebar">
           <ul>
             <li><a href="#" >
-              <span class="icon"><i class="fas fa-comments" aria-hidden="true"></i></span>
-              <span class="title">Thông Báo</span>
+              <span class="icon"><i class="fas fa-user" aria-hidden="true"></i></span>
+              <span class="title">Thông Tin Cá Nhân</span>
             </a></li>
             <li><a href="#">
               <span class="icon"><i class="fas fa-pencil-alt" aria-hidden="true"></i></span>
-              <span class="title">Khóa Học</span>
+              <span class="title">Hoạt Động</span>
             </a></li>
-            <li><a href="#">
+            <li><a href="#" >
               <span class="icon"><i class="fas fa-edit" aria-hidden="true"></i></span>
               <span class="title">Điểm</span>
             </a></li>
@@ -58,69 +59,98 @@
             </a></li>
             <li><a href="#">
               <span class="icon"><i class="fas fa-address-book" aria-hidden="true"></i></span>
-              <span class="title">Lớp</span>
+              <span class="title">Lịch Thi</span>
             </a></li>
           </ul>
         </div>
 
         <div class="main_container">
           <div class="item">
-            <h1>Thời Khóa Biểu</h1>
-
-            <div class="month">      
-              <ul>
-                <li class="prev">&#10094;</li>
-                <li class="next">&#10095;</li>
-                <li>
-                  August<br>
-                  <span style="font-size:18px">2017</span>
-                </li>
-              </ul>
+            <div class="item_titile">
+              <h1>Thời Khóa Biểu</h1>
             </div>
-            
-            <ul class="weekdays">
-              <li>Mo</li>
-              <li>Tu</li>
-              <li>We</li>
-              <li>Th</li>
-              <li>Fr</li>
-              <li>Sa</li>
-              <li>Su</li>
-            </ul>
-            
-            <ul class="days">  
-              <li>1</li>
-              <li>2</li>
-              <li>3</li>
-              <li>4</li>
-              <li>5</li>
-              <li>6</li>
-              <li>7</li>
-              <li>8</li>
-              <li>9</li>
-              <li><span class="active">10</span></li>
-              <li>11</li>
-              <li>12</li>
-              <li>13</li>
-              <li>14</li>
-              <li>15</li>
-              <li>16</li>
-              <li>17</li>
-              <li>18</li>
-              <li>19</li>
-              <li>20</li>
-              <li>21</li>
-              <li>22</li>
-              <li>23</li>
-              <li>24</li>
-              <li>25</li>
-              <li>26</li>
-              <li>27</li>
-              <li>28</li>
-              <li>29</li>
-              <li>30</li>
-              <li>31</li>
-            </ul>
+
+            <div class="information">
+              <span><h4>Code:</h4>1731102047</span>
+              <span><h4>Name:</h4>Lê Anh Kiệt</span>
+              <span><h4>Class:</h4>11DHPM</span>   
+              <span><h4>Deparment:</h4>Kỹ thuật phần mềm</span>
+            </div>
+
+            <table id="customers">
+              <tr>
+                <th style="width: 1%; font-size: 20px;">Sub Code</th>
+                <th style="width: 20%;">Subject Name</th>
+                <th>Credit</th>
+                <th>Class Code</th>
+                <th>SSCP</th>
+                <th>Day</th>
+                <th>Room</th>
+                <th>Intructor</th>
+              </tr>
+              <tr>
+                <td>20314</td>
+                <td>Lập trình thuyết bị di động</td>
+                <td>3</td>
+                <td>11DHPM</td>
+                <td>80</td>
+                <td>Wed</td>
+                <td>B02</td>
+                <td>Lê Huỳnh Phước</td>
+              </tr>
+              <tr>
+                <td>34521</td>
+                <td>Lập trình môi trường trực quang</td>
+                <td>3</td>
+                <td>11DHPM</td>
+                <td>80</td>
+                <td>Mon</td>
+                <td>Germany</td>
+                <td>Lê Huỳnh Phước</td>
+              </tr>
+              <tr>
+                <td>34563</td>
+                <td>Quản lý dự án phần mềm</td>
+                <td>3</td>
+                <td>11DHPM</td>
+                <td>30</td>
+                <td>Tue</td>
+                <td>Germany</td>
+                <td>Germany</td>
+              </tr>
+              <tr>
+                <td>09790</td>
+                <td>Bảo mật thông tin</td>
+                <td>3</td>
+                <td>11DHPM</td>
+                <td>50</td>
+                <td>Thu</td>
+                <td>Germany</td>
+                <td>Trần Quảng Hồng</td>
+              </tr>
+              <tr>
+                <td>87965</td>
+                <td>Anh văn chuyên nghành 2</td>
+                <td>2</td>
+                <td>11DHPM</td>
+                <td>80</td>
+                <td>Fri</td>
+                <td>Germany</td>
+                <td>Germany</td>
+              </tr>
+              <tr>
+                <td>76854</td>
+                <td>Quản trị cơ sở dữ liệu</td>
+                <td>3</td>
+                <td>11DHPM</td>
+                <td>50</td>
+                <td>Sat</td>
+                <td>Germany</td>
+                <td>Germany</td>
+              </tr>
+             
+              
+            </table>
           </div>
           
         </div>
