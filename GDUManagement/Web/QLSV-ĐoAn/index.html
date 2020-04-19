@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="./css/semester.css">
+    <link rel="stylesheet" href="./css/info.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -41,7 +42,7 @@
 
         <div class="sidebar">
           <ul>
-            <li><a href="#" >
+            <li><a href="#" class="active">
               <span class="icon"><i class="fas fa-user" aria-hidden="true"></i></span>
               <span class="title">Thông Tin Cá Nhân</span>
             </a></li>
@@ -53,7 +54,7 @@
               <span class="icon"><i class="fas fa-edit" aria-hidden="true"></i></span>
               <span class="title">Điểm</span>
             </a></li>
-            <li><a href="#" class="active">
+            <li><a href="#"  n>
               <span class="icon"><i class="fas fa-calendar-alt" aria-hidden="true"></i></span>
               <span class="title">Thời Khóa Biểu</span>
             </a></li>
@@ -66,91 +67,60 @@
 
         <div class="main_container">
           <div class="item">
-            <div class="item_titile">
-              <h1>Thời Khóa Biểu</h1>
-            </div>
-
-            <div class="information">
-              <span><h4>Code:</h4>1731102047</span>
-              <span><h4>Name:</h4>Lê Anh Kiệt</span>
-              <span><h4>Class:</h4>11DHPM</span>   
-              <span><h4>Deparment:</h4>Kỹ thuật phần mềm</span>
-            </div>
-
-            <table id="customers">
-              <tr>
-                <th style="width: 1%; font-size: 20px;">Sub Code</th>
-                <th style="width: 20%;">Subject Name</th>
-                <th>Credit</th>
-                <th>Class Code</th>
-                <th>SSCP</th>
-                <th>Day</th>
-                <th>Room</th>
-                <th>Intructor</th>
-              </tr>
-              <tr>
-                <td>20314</td>
-                <td>Lập trình thuyết bị di động</td>
-                <td>3</td>
-                <td>11DHPM</td>
-                <td>80</td>
-                <td>Wed</td>
-                <td>B02</td>
-                <td>Lê Huỳnh Phước</td>
-              </tr>
-              <tr>
-                <td>34521</td>
-                <td>Lập trình môi trường trực quang</td>
-                <td>3</td>
-                <td>11DHPM</td>
-                <td>80</td>
-                <td>Mon</td>
-                <td>Germany</td>
-                <td>Lê Huỳnh Phước</td>
-              </tr>
-              <tr>
-                <td>34563</td>
-                <td>Quản lý dự án phần mềm</td>
-                <td>3</td>
-                <td>11DHPM</td>
-                <td>30</td>
-                <td>Tue</td>
-                <td>Germany</td>
-                <td>Germany</td>
-              </tr>
-              <tr>
-                <td>09790</td>
-                <td>Bảo mật thông tin</td>
-                <td>3</td>
-                <td>11DHPM</td>
-                <td>50</td>
-                <td>Thu</td>
-                <td>Germany</td>
-                <td>Trần Quảng Hồng</td>
-              </tr>
-              <tr>
-                <td>87965</td>
-                <td>Anh văn chuyên nghành 2</td>
-                <td>2</td>
-                <td>11DHPM</td>
-                <td>80</td>
-                <td>Fri</td>
-                <td>Germany</td>
-                <td>Germany</td>
-              </tr>
-              <tr>
-                <td>76854</td>
-                <td>Quản trị cơ sở dữ liệu</td>
-                <td>3</td>
-                <td>11DHPM</td>
-                <td>50</td>
-                <td>Sat</td>
-                <td>Germany</td>
-                <td>Germany</td>
-              </tr>
-             
-              
-            </table>
+            
+          <div class="info_content ">
+              <div class="info_content_left">
+                  <div class="info_content_left_title">
+                      <h3>Thông tin sinh viên</h3>
+                  </div>
+                  <div class="info_content_left_detail">
+                    <span class="info_title_min"><h4>MSSV:</h4>1731102047</span>
+                    <span class="info_title_min"><h4>Họ và Tên:</h4>Lê Anh Kiệt</span>
+                    <span class="info_title_min"><h4>Ngày Sinh:</h4>23/06/1999</span>   
+                    <span class="info_title_min"><h4>Nơi Sinh:</h4>Đồng Tháp</span>
+                    <span class="info_title_min"><h4>Giới Tính:</h4>Nam</span>
+                    <span class="info_title_min"><h4>Dân Tộc:</h4>Kinh</span>
+                    <span class="info_title_min"><h4>SCMND:</h4>341941579</span>
+                    <span class="info_title_min"><h4>Đoàn/Đảng:</h4>Không tham gia</span>   
+                    <span class="info_title_min"><h4>Loại Sinh Viên:</h4>Chính thức</span>
+                    <span class="info_title_min"><h4>Tình Trạng Học:</h4>Còn học</span>
+                    <span class="info_title_min"><h4>Quốc Gia:</h4>Việt Nam</span>
+                    <span class="info_title_min"><h4>Địa Chỉ Thường Trú:</h4>Tân Dinh Tân Hòa Thanh Bình Đồng Tháp</span>
+                  </div>
+                  <div class="info_content_left_title">
+                      <h3>Thông tin khóa học</h3>
+                  </div>
+                  <div class="info_content_left_detail">
+                    <span class="info_title_min"><h4>Khóa Học:</h4>DHCQ-Khóa 11</span>
+                    <span class="info_title_min"><h4>Niên Khóa:</h4>2017-2021</span>
+                    <span class="info_title_min"><h4>Khoa:</h4>Công nghệ thông tin</span>   
+                    <span class="info_title_min"><h4>Chuyên Nghành</h4>Kỷ thuật phần mềm</span>
+                    <span class="info_title_min"><h4>Lớp:</h4>11DHPM</span>
+                    
+                  </div>
+              </div>
+              <div class="info_content_right ">
+                  <div class="text-center">
+                      <img src="./img/User.png" class="rounded" style="width: 200px; height: 200px;" alt="...">
+                  </div>
+                  <div class="info_content_right_contact">
+                      <div class="info_content_right_title">
+                          <h3>Thông tin liên lạc</h3>
+                      </div>
+                      <div class="info_content_left_detail">
+                          <i>*Thông tin liên lạc sinh viên:</i>
+                          <span class="info_title_min"><h4>Điện Thoại:</h4>DHCQ-Khóa 11</span>
+                          <span class="info_title_min"><h4>Email:</h4>2017-2021</span>
+                          <span class="info_title_min"><h4>Địa chỉ tạm trú:</h4>Công nghệ thông tin</span>   
+                          <i>*Thông tin liên lạc người thân của sinh viên (khi không liên lạc được với sinh viên):</i>
+                          <span class="info_title_min"><h4>Họ Tên:</h4>############</span>
+                          <span class="info_title_min"><h4>Điện Thoại:</h4>############</span>
+                          <span class="info_title_min"><h4>Địa Chỉ:</h4>############</span>
+                          
+                        </div>
+                  </div>
+              </div>
+          </div>
           </div>
           
         </div>
