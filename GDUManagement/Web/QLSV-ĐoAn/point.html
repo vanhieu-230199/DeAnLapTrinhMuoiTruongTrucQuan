@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="./css/point.css">
+    <link rel="stylesheet" href="./css/semester.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
@@ -38,10 +39,18 @@
           <div class="btn" onclick="XemDiem();">
               <div class="box">
                   <h1><i>Enter semester to view exam mark!</i></h1>
+                  
+                  <div class="select">
+                    <select name="slct" id="slct">
+                      <option selected disabled>Tất cả học kì</option>
+                      <option value="1">Học kì 1</option>
+                      <option value="2">Học kì 2</option>
+                      <option value="3">Học kì hè</option>
+                    </select>
+                  </div>
                   <form action="">
-                      <input type="text" name="" placeholder="Type...">
-                      <input type="submit" name="" value="Search">
-                  </form>
+                    <input type="submit" name="" value="Xem Điểm">
+                </form>
                   
               </div>
             
@@ -52,54 +61,99 @@
           <div class="point_bottom_title">
               <h5>Học kì:</h5>
           </div>
-          <table class="table">
-              <thead class="thead-light">
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                  <th scope="col">Handle</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-                <tr>
-                  <th scope="row">6</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </table>
+          <table id="customers">
+            <tr>
+              <th style="width: 1%; font-size: 20px;">Sub Code</th>
+              <th style="width: 20%;">Subject Name</th>
+              <th>Credit</th>
+              <th>Subject Type</th>
+              <th style="width: 10%;">Point</th>
+              <th style="width: 10%;">Score in words</th>
+              <th style="width: 10%;">2nd Point</th>
+              <th style="width: 10%;">2nd Score in words </th>
+              <th style="width: 5%">Result </th>
+            </tr>
+            <tr>
+              <td>20314</td>
+              <td>Lập trình thuyết bị di động</td>
+              <td>3</td>
+              <td>Bắt buộc</td>
+              <td>8</td>
+              <td>B+</td>
+              <td></td>
+              <td></td>
+              <td >
+                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+              </td>
+            </tr>
+            <tr>
+              <td>34521</td>
+              <td>Lập trình môi trường trực quang</td>
+              <td>3</td>
+              <td>Bắt buộc</td>
+              <td>7</td>
+              <td>B</td>
+              <td></td>
+              <td></td>
+              <td >
+                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+              </td>
+            </tr>
+            <tr>
+              <td>34563</td>
+              <td>Quản lý dự án phần mềm</td>
+              <td>3</td>
+              <td>Bắt buộc</td>
+              <td>9</td>
+              <td>A</td>
+              <td></td>
+              <td></td>
+              <td >
+                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+              </td>
+            </tr>
+            <tr>
+              <td>09790</td>
+              <td>Bảo mật thông tin</td>
+              <td>3</td>
+              <td>Bắt buộc</td>
+              <td>9</td>
+              <td>A</td>
+              <td></td>
+              <td></td>
+              <td >
+                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+              </td>
+            </tr>
+            <tr>
+              <td>87965</td>
+              <td>Anh văn chuyên nghành 2</td>
+              <td>2</td>
+              <td>Bắt buộc</td>
+              <td>7</td>
+              <td>B</td>
+              <td></td>
+              <td></td>
+              <td >
+                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+              </td>
+            </tr>
+            <tr>
+              <td>76854</td>
+              <td>Quản trị cơ sở dữ liệu</td>
+              <td>3</td>
+              <td>Bắt buộc</td>
+              <td>6</td>
+              <td>C+</td>
+              <td></td>
+              <td></td>
+              <td >
+                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+              </td>
+            </tr>
+           
+            
+          </table>
       </div>
         
   </div>
