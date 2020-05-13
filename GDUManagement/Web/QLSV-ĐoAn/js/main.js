@@ -46,3 +46,27 @@ function XemDiem(){
 	var divPoint = document.getElementById('divPoint');
 	divPoint.style.display = "block";
 }
+
+// chart
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+	['Director (Year)',  'HK1', 'HK2'],
+	['Điểm 30%', 8.4,         7.9],
+	['Điểm 70%(L1)',     3.9,         6.5],
+	['Điểm 70% (L2)',        6.5,         6.4],
+	
+  ]);
+
+  var options = {
+	title: 'Tiến trình học tập',
+	vAxis: {title: 'Điểm'},
+	isStacked: true
+  };
+
+  var chart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div'));
+
+  chart.draw(data, options);
+}
