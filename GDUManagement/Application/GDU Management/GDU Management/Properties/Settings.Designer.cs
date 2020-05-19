@@ -33,5 +33,16 @@ namespace GDU_Management.Properties {
                 return ((string)(this["GDUmanagementConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=34.87.155.205;Initial Catalog=GDUmanagerment;User ID=sqlserver;Passwo" +
+            "rd=113114115")]
+        public string GDUmanagermentConnectionString {
+            get {
+                return ((string)(this["GDUmanagermentConnectionString"]));
+            }
+        }
     }
 }

@@ -47,6 +47,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DaoImpl\AdminImpl.cs" />
+    <Compile Include="DaoImpl\DiemMonHocImpl.cs" />
+    <Compile Include="DaoImpl\GiangVienImpl.cs" />
+    <Compile Include="DaoImpl\KhoaHocImpl.cs" />
+    <Compile Include="DaoImpl\KhoaImpl.cs" />
+    <Compile Include="DaoImpl\LopImpl.cs" />
+    <Compile Include="DaoImpl\MonHocImpl.cs" />
+    <Compile Include="DaoImpl\NganhHocImpl.cs" />
+    <Compile Include="DaoImpl\SinhVienImpl.cs" />
     <Compile Include="GDU_Views\frmAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,8 +122,31 @@
     <Compile Include="GDU_Views\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="IDao\IDaoAdmin.cs" />
+    <Compile Include="IDao\IDaoDiemMonHoc.cs" />
+    <Compile Include="IDao\IDaoGiangVien.cs" />
+    <Compile Include="IDao\IDaoKhoa.cs" />
+    <Compile Include="IDao\IDaoKhoaHoc.cs" />
+    <Compile Include="IDao\IDaoLop.cs" />
+    <Compile Include="IDao\IDaoMonHoc.cs" />
+    <Compile Include="IDao\IDaoNganhHoc.cs" />
+    <Compile Include="IDao\IDaoSinhVien.cs" />
+    <Compile Include="Model\GDUDataConnections.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GDUDataConnections.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\AdminService.cs" />
+    <Compile Include="Service\DiemMonHocService.cs" />
+    <Compile Include="Service\GiangVienService.cs" />
+    <Compile Include="Service\KhoaHocService.cs" />
+    <Compile Include="Service\KhoaService.cs" />
+    <Compile Include="Service\LopService.cs" />
+    <Compile Include="Service\MonHocService.cs" />
+    <Compile Include="Service\NganhHocService.cs" />
+    <Compile Include="Service\SinhVienService.cs" />
     <EmbeddedResource Include="GDU_Views\frmAccount.resx">
       <DependentUpon>frmAccount.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,11 +180,21 @@
     <EmbeddedResource Include="GDU_Views\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Model\GDUDataConnections.dbml.layout">
+      <DependentUpon>GDUDataConnections.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Model\GDUDataConnections.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>GDUDataConnections.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\GDU_Management.Model.Khoa.datasource" />
+    <None Include="Properties\DataSources\GDU_Management.Model.SinhVien.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using GDU_Management.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +18,14 @@ namespace GDU_Management
         {
             InitializeComponent();
             NgayGio();
+            showDanhSachSinhVien();
+            showDanhSachKhoa();
         }
+
+
+        //Khai bao cac class service 
+        SinhVienService sinhVienService = new SinhVienService();
+        KhoaService khoaService = new KhoaService();
 
         //DS HÀM PUBLIC
         public void NgayGio()
@@ -37,9 +46,19 @@ namespace GDU_Management
             GDUManagement gdu = new GDUManagement();
             gdu.ShowDialog();
         }
+
+        public void showDanhSachSinhVien()
+        {
+            dgvDSSV.DataSource = sinhVienService.GetAllSinhVien();
+        }
+
+        public void showDanhSachKhoa()
+        {
+            dgvDanhSachKhoa.DataSource = khoaService.GetAllKhoa();
+        }
         //KẾT THÚC DS HÀM PUBLIC
- 
-       
+
+
 
         private void timerTime_QLSV_Tick(object sender, EventArgs e)
         {
