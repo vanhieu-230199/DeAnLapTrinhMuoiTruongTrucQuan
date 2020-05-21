@@ -12,31 +12,64 @@ namespace GDU_Management.DaoImpl
     class KhoaImpl : IDaoKhoa
     {
         //tạo kết nối database 
-        GDUDataConnectionsDataContext db = new GDUDataConnectionsDataContext();
-        List<Khoa> khoa;
+        GDUDataConnectionsDataContext db;
+        List<Khoa> khoas;
 
-        public Khoa CreateKhoa(Khoa khoa)
+        //lấy database từ cơ sở dữ liệu
+        public KhoaImpl()
         {
-            //code conntent
-            return null;
+            db = new GDUDataConnectionsDataContext();
+            using (db)
+            {
+                var khoa = from x in db.Khoas select x;
+                db.DeferredLoadingEnabled = true;
+                khoas = khoa.ToList();
+            }
         }
 
-        public void DeleteKhoa(string MaKhoa)
+
+        //tạo một KHOA mới
+        public Khoa CreateKhoa(Khoa khoa)
         {
-            //code conntent
+            db = new GDUDataConnectionsDataContext();
+            Khoa kh = new Khoa();
+            kh = khoa;
+            db.Khoas.InsertOnSubmit(kh);
+            db.SubmitChanges();
+            return kh;
+        }
+
+        public void DeleteKhoa(string maKhoa)
+        {
+            db = new GDUDataConnectionsDataContext();
+            Khoa kh = new Khoa();
+            kh = db.Khoas.Single(x => x.MaKhoa == maKhoa);
+            db.Khoas.DeleteOnSubmit(kh);
+            db.SubmitChanges();
         }
 
         public List<Khoa> GetAllKhoa()
         {
+            db = new GDUDataConnectionsDataContext();
             var k = from x in db.Khoas select x;
-            khoa = k.ToList();
-            return khoa;
-            Console.WriteLine("get all khoa");
+            khoas = k.ToList();
+            return khoas;
         }
 
         public void UpdateKhoa(Khoa khoa)
         {
-            //code conntent
+            db = new GDUDataConnectionsDataContext();
+            Khoa kh = new Khoa();
+            kh = db.Khoas.Single(x => x.MaKhoa == khoa.MaKhoa);
+            setKhoaUpdate(kh, khoa);
+            db.SubmitChanges();
+        }
+
+        public Khoa setKhoaUpdate(Khoa khoaDB, Khoa khoaUpdate)
+        {
+            db = new GDUDataConnectionsDataContext();
+            khoaDB.TenKhoa = khoaUpdate.TenKhoa;
+            return khoaDB;
         }
     }
 }

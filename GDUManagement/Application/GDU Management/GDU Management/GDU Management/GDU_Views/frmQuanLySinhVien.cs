@@ -1,4 +1,5 @@
 ﻿
+using GDU_Management.Model;
 using GDU_Management.Service;
 using System;
 using System.Collections.Generic;
@@ -18,14 +19,15 @@ namespace GDU_Management
         {
             InitializeComponent();
             NgayGio();
-            showDanhSachSinhVien();
-            showDanhSachKhoa();
+            LoadDanhSachSinhVienToDatagridview();
+            LoadDanhSachKhoaToDatagridview();
         }
 
 
-        //Khai bao cac class service 
+        //Khai bao cac service 
         SinhVienService sinhVienService = new SinhVienService();
         KhoaService khoaService = new KhoaService();
+        KhoaHocService khoaHocService = new KhoaHocService();
 
         //DS HÀM PUBLIC
         public void NgayGio()
@@ -47,14 +49,36 @@ namespace GDU_Management
             gdu.ShowDialog();
         }
 
-        public void showDanhSachSinhVien()
+        //load danh sach sinh viên lên datagridview
+        public void LoadDanhSachSinhVienToDatagridview()
         {
             dgvDSSV.DataSource = sinhVienService.GetAllSinhVien();
         }
 
-        public void showDanhSachKhoa()
+        //laod danh sach khoa lên datagridview
+        public void LoadDanhSachKhoaToDatagridview()
         {
             dgvDanhSachKhoa.DataSource = khoaService.GetAllKhoa();
+        }
+
+        //hàm show dữ liệu dgvKhoa lên textbox
+        public void ShowDataKhoaToTextBox()
+        {
+            txtMaKhoa.DataBindings.Clear();
+            txtMaKhoa.DataBindings.Add("text", dgvDanhSachKhoa.DataSource, "MaKhoa");
+            txtTenKhoa.DataBindings.Clear();
+            txtTenKhoa.DataBindings.Add("text", dgvDanhSachKhoa.DataSource, "TenKhoa");
+        }
+
+        public bool checkDataKHOA()
+        {
+            if (string.IsNullOrEmpty(txtTenKhoa.Text))
+            {
+                MessageBox.Show("Tên Khoa Không được bỏ trống, vui lòng kiểm tra lại...");
+                txtTenKhoa.Focus();
+                return false;
+            }
+            return true;
         }
         //KẾT THÚC DS HÀM PUBLIC
 
@@ -173,6 +197,74 @@ namespace GDU_Management
         private void btnHome_SV_Click(object sender, EventArgs e)
         {
             goToGDUmanagement();
+        }
+
+        private void dgvDanhSachKhoa_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnUpdateKhoa.Enabled = true;
+            btnDeleteKhoa.Enabled = true;
+            ShowDataKhoaToTextBox();
+        }
+
+        private void btnSaveKhoa_Click(object sender, EventArgs e)
+        {
+            if (checkDataKHOA())
+            {
+                Khoa khoa = new Khoa();
+                khoa.MaKhoa = txtMaKhoa.Text.Trim();
+                khoa.TenKhoa = txtTenKhoa.Text.Trim();
+
+                khoaService.CreateKhoa(khoa);
+                LoadDanhSachKhoaToDatagridview();
+                MessageBox.Show("Thêm Thành Công...", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                btnSaveKhoa.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Lỗi, Thêm Thất Bại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnNewKhoa_Click(object sender, EventArgs e)
+        {
+            btnSaveKhoa.Enabled = true;
+            btnUpdateKhoa.Enabled = false;
+            btnDeleteKhoa.Enabled = false;
+            txtMaKhoa.Text = "";
+            txtTenKhoa.Text = "";
+        }
+
+        private void btnUpdateKhoa_Click(object sender, EventArgs e)
+        {
+            Khoa kh = new Khoa();
+            kh.TenKhoa = txtTenKhoa.Text.Trim();
+            khoaService.UpdateKhoa(kh);
+            MessageBox.Show("Update Thành Công", "Thông Báo", MessageBoxButtons.OK);
+            LoadDanhSachKhoaToDatagridview();
+        }
+
+        private void btnDeleteKhoa_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("ban co muon xoa khong", "canh bao", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                string maKhoa;
+                maKhoa = txtMaKhoa.Text.Trim();
+                if (string.IsNullOrEmpty(txtMaKhoa.Text))
+                {
+                    MessageBox.Show("xoa that bai", "thong bao", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else
+                {
+                    khoaService.DeleteKhoa(maKhoa);
+                    MessageBox.Show("da xoa", "thong bao", MessageBoxButtons.OK);
+                    txtMaKhoa.Text = "";
+                    txtTenKhoa.Text = "";
+
+                    btnNewKhoa.Enabled = true;
+                    LoadDanhSachKhoaToDatagridview();
+                }
+            }
         }
     }
 }

@@ -11,7 +11,7 @@ namespace GDU_Management.IDao
     {
         List<Khoa> GetAllKhoa();
         Khoa CreateKhoa(Khoa khoa);
-        void DeleteKhoa(string MaKhoa);
+        void DeleteKhoa(string maKhoa);
         void UpdateKhoa(Khoa khoa);
 
     }

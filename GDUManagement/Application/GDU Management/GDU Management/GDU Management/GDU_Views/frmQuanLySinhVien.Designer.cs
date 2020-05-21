@@ -550,6 +550,7 @@
             this.dgvDanhSachKhoa.RowTemplate.Height = 24;
             this.dgvDanhSachKhoa.Size = new System.Drawing.Size(1353, 399);
             this.dgvDanhSachKhoa.TabIndex = 2;
+            this.dgvDanhSachKhoa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachKhoa_CellContentClick);
             // 
             // STT
             // 
@@ -645,6 +646,7 @@
             this.btnDeleteKhoa.TabIndex = 6;
             this.btnDeleteKhoa.Text = "Delete";
             this.btnDeleteKhoa.UseVisualStyleBackColor = false;
+            this.btnDeleteKhoa.Click += new System.EventHandler(this.btnDeleteKhoa_Click);
             // 
             // btnNewKhoa
             // 
@@ -655,6 +657,7 @@
             this.btnNewKhoa.TabIndex = 1;
             this.btnNewKhoa.Text = "New";
             this.btnNewKhoa.UseVisualStyleBackColor = false;
+            this.btnNewKhoa.Click += new System.EventHandler(this.btnNewKhoa_Click);
             // 
             // btnUpdateKhoa
             // 
@@ -665,6 +668,7 @@
             this.btnUpdateKhoa.TabIndex = 5;
             this.btnUpdateKhoa.Text = "Update";
             this.btnUpdateKhoa.UseVisualStyleBackColor = false;
+            this.btnUpdateKhoa.Click += new System.EventHandler(this.btnUpdateKhoa_Click);
             // 
             // btnSaveKhoa
             // 
@@ -675,6 +679,7 @@
             this.btnSaveKhoa.TabIndex = 4;
             this.btnSaveKhoa.Text = "Save";
             this.btnSaveKhoa.UseVisualStyleBackColor = false;
+            this.btnSaveKhoa.Click += new System.EventHandler(this.btnSaveKhoa_Click);
             // 
             // txtTenKhoa
             // 
