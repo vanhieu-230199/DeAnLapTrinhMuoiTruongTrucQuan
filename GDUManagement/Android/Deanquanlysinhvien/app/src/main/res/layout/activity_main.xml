@@ -173,13 +173,14 @@
     </TableLayout>
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/logo1"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo1"></ImageView>
+        android:src="@drawable/logo1"/>
+
 
     <TextView
         android:id="@+id/textView"
