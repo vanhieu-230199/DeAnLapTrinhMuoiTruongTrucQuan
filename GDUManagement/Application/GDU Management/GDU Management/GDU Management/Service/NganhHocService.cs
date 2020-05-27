@@ -32,5 +32,11 @@ namespace GDU_Management.Service
         {
             nganhHocIDao.UpdateNganhHoc(nganhHoc);
         }
+
+        //lấy ngành theo khoa
+        public List<NganhHoc> GetNganhHocByKHOA(string maKhoa)
+        {
+            return nganhHocIDao.GetNganhHocByKHOA(maKhoa);
+        }
     }
 }

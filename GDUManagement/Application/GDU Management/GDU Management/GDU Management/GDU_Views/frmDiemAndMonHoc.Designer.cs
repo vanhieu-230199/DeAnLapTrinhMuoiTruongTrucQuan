@@ -1103,6 +1103,7 @@
             this.ClientSize = new System.Drawing.Size(1418, 779);
             this.Controls.Add(this.pnQLDiem);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmDiemAndMonHoc";
             this.pnQLDiem.ResumeLayout(false);
             this.tabQLDiem.ResumeLayout(false);

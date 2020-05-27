@@ -277,6 +277,7 @@
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(913, 543);
             this.Controls.Add(this.pnDanhSachLop);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmDanhSachLop";
             this.Text = "frmDanhSachLop";
             this.pnDanhSachLop.ResumeLayout(false);

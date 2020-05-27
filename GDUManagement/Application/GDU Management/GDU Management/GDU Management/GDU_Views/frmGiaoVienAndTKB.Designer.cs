@@ -63,6 +63,10 @@
             this.grbDay = new System.Windows.Forms.GroupBox();
             this.lblDay = new System.Windows.Forms.Label();
             this.grbDanhSachLop = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.lblNamSinh = new System.Windows.Forms.Label();
+            this.rtxtDiaChi = new System.Windows.Forms.RichTextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.txtEmailGV = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.pnControl = new System.Windows.Forms.Panel();
@@ -139,10 +143,6 @@
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.timerGiangvien_TKB = new System.Windows.Forms.Timer(this.components);
-            this.rtxtDiaChi = new System.Windows.Forms.RichTextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.lblNamSinh = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.pnGiaoVien_TKB.SuspendLayout();
             this.tabGiangVien_TKB.SuspendLayout();
             this.tabgGiangVien.SuspendLayout();
@@ -540,6 +540,39 @@
             this.grbDanhSachLop.TabIndex = 1;
             this.grbDanhSachLop.TabStop = false;
             this.grbDanhSachLop.Text = "Thông tin Giảng Viên:";
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Location = new System.Drawing.Point(127, 239);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(343, 28);
+            this.dateTimePicker3.TabIndex = 83;
+            // 
+            // lblNamSinh
+            // 
+            this.lblNamSinh.AutoSize = true;
+            this.lblNamSinh.Location = new System.Drawing.Point(13, 244);
+            this.lblNamSinh.Name = "lblNamSinh";
+            this.lblNamSinh.Size = new System.Drawing.Size(98, 24);
+            this.lblNamSinh.TabIndex = 82;
+            this.lblNamSinh.Text = "Năm Sinh:";
+            // 
+            // rtxtDiaChi
+            // 
+            this.rtxtDiaChi.Location = new System.Drawing.Point(516, 61);
+            this.rtxtDiaChi.Name = "rtxtDiaChi";
+            this.rtxtDiaChi.Size = new System.Drawing.Size(252, 91);
+            this.rtxtDiaChi.TabIndex = 81;
+            this.rtxtDiaChi.Text = "";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(512, 24);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(75, 24);
+            this.label19.TabIndex = 80;
+            this.label19.Text = "Địa Chỉ:";
             // 
             // txtEmailGV
             // 
@@ -1292,39 +1325,6 @@
             this.timerGiangvien_TKB.Interval = 1000;
             this.timerGiangvien_TKB.Tick += new System.EventHandler(this.timerGiangvien_TKB_Tick);
             // 
-            // rtxtDiaChi
-            // 
-            this.rtxtDiaChi.Location = new System.Drawing.Point(516, 61);
-            this.rtxtDiaChi.Name = "rtxtDiaChi";
-            this.rtxtDiaChi.Size = new System.Drawing.Size(252, 91);
-            this.rtxtDiaChi.TabIndex = 81;
-            this.rtxtDiaChi.Text = "";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(512, 24);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(75, 24);
-            this.label19.TabIndex = 80;
-            this.label19.Text = "Địa Chỉ:";
-            // 
-            // lblNamSinh
-            // 
-            this.lblNamSinh.AutoSize = true;
-            this.lblNamSinh.Location = new System.Drawing.Point(13, 244);
-            this.lblNamSinh.Name = "lblNamSinh";
-            this.lblNamSinh.Size = new System.Drawing.Size(98, 24);
-            this.lblNamSinh.TabIndex = 82;
-            this.lblNamSinh.Text = "Năm Sinh:";
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(127, 239);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(343, 28);
-            this.dateTimePicker3.TabIndex = 83;
-            // 
             // frmGiaoVienAndTKB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1332,6 +1332,7 @@
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(1509, 803);
             this.Controls.Add(this.pnGiaoVien_TKB);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmGiaoVienAndTKB";
             this.pnGiaoVien_TKB.ResumeLayout(false);
             this.tabGiangVien_TKB.ResumeLayout(false);

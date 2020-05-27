@@ -59,10 +59,6 @@
             this.lblDay = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dgvDanhSachKhoa = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maKhoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenKhoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.khoaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grbTimKiemKhoa = new System.Windows.Forms.GroupBox();
             this.txtTimKiem_QLK = new System.Windows.Forms.TextBox();
@@ -177,6 +173,10 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.timerTime_QLSV = new System.Windows.Forms.Timer(this.components);
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maKhoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenKhoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnQLSV.SuspendLayout();
             this.tabQL.SuspendLayout();
             this.tabgQLK.SuspendLayout();
@@ -551,41 +551,7 @@
             this.dgvDanhSachKhoa.Size = new System.Drawing.Size(1353, 399);
             this.dgvDanhSachKhoa.TabIndex = 2;
             this.dgvDanhSachKhoa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachKhoa_CellContentClick);
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 50;
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            this.STT.Width = 125;
-            // 
-            // maKhoaDataGridViewTextBoxColumn
-            // 
-            this.maKhoaDataGridViewTextBoxColumn.DataPropertyName = "MaKhoa";
-            this.maKhoaDataGridViewTextBoxColumn.HeaderText = "Mã Khoa";
-            this.maKhoaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maKhoaDataGridViewTextBoxColumn.Name = "maKhoaDataGridViewTextBoxColumn";
-            this.maKhoaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.maKhoaDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // tenKhoaDataGridViewTextBoxColumn
-            // 
-            this.tenKhoaDataGridViewTextBoxColumn.DataPropertyName = "TenKhoa";
-            this.tenKhoaDataGridViewTextBoxColumn.HeaderText = "Tên Khoa";
-            this.tenKhoaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenKhoaDataGridViewTextBoxColumn.Name = "tenKhoaDataGridViewTextBoxColumn";
-            this.tenKhoaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tenKhoaDataGridViewTextBoxColumn.Width = 250;
-            // 
-            // MoTa
-            // 
-            this.MoTa.DataPropertyName = "MoTa";
-            this.MoTa.HeaderText = "Mô Tả";
-            this.MoTa.MinimumWidth = 6;
-            this.MoTa.Name = "MoTa";
-            this.MoTa.ReadOnly = true;
-            this.MoTa.Width = 150;
+            this.dgvDanhSachKhoa.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDanhSachKhoa_CellMouseClick);
             // 
             // khoaBindingSource
             // 
@@ -1735,6 +1701,41 @@
             this.timerTime_QLSV.Interval = 1000;
             this.timerTime_QLSV.Tick += new System.EventHandler(this.timerTime_QLSV_Tick);
             // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 50;
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            this.STT.Width = 112;
+            // 
+            // maKhoaDataGridViewTextBoxColumn
+            // 
+            this.maKhoaDataGridViewTextBoxColumn.DataPropertyName = "MaKhoa";
+            this.maKhoaDataGridViewTextBoxColumn.HeaderText = "Mã Khoa";
+            this.maKhoaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maKhoaDataGridViewTextBoxColumn.Name = "maKhoaDataGridViewTextBoxColumn";
+            this.maKhoaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maKhoaDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // tenKhoaDataGridViewTextBoxColumn
+            // 
+            this.tenKhoaDataGridViewTextBoxColumn.DataPropertyName = "TenKhoa";
+            this.tenKhoaDataGridViewTextBoxColumn.HeaderText = "Tên Khoa";
+            this.tenKhoaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenKhoaDataGridViewTextBoxColumn.Name = "tenKhoaDataGridViewTextBoxColumn";
+            this.tenKhoaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tenKhoaDataGridViewTextBoxColumn.Width = 450;
+            // 
+            // MoTa
+            // 
+            this.MoTa.DataPropertyName = "GhiChu";
+            this.MoTa.HeaderText = "Ghi Chú";
+            this.MoTa.MinimumWidth = 6;
+            this.MoTa.Name = "MoTa";
+            this.MoTa.ReadOnly = true;
+            this.MoTa.Width = 200;
+            // 
             // frmQuanLySinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1742,8 +1743,10 @@
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(1418, 779);
             this.Controls.Add(this.pnQLSV);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmQuanLySinhVien";
             this.Text = "  Quản Lý Sinh Viên";
+            this.Load += new System.EventHandler(this.frmQuanLySinhVien_Load);
             this.pnQLSV.ResumeLayout(false);
             this.tabQL.ResumeLayout(false);
             this.tabgQLK.ResumeLayout(false);

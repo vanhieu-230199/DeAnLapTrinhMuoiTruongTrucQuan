@@ -19,17 +19,23 @@ namespace GDU_Management
         {
             InitializeComponent();
             NgayGio();
-            LoadDanhSachSinhVienToDatagridview();
-            LoadDanhSachKhoaToDatagridview();
+            btnSaveKhoa.Enabled = false;
+            btnUpdateKhoa.Enabled = false;
+            btnDeleteKhoa.Enabled = false; 
         }
 
+        //các delegate dùng để truyền id qua các form con
+        delegate void SendMaKhoaToFrmDanhSachKhoa(TextBox dlgtxtMaKhoa);
 
-        //Khai bao cac service 
+
+        //khai báo service 
         SinhVienService sinhVienService = new SinhVienService();
         KhoaService khoaService = new KhoaService();
         KhoaHocService khoaHocService = new KhoaHocService();
 
-        //DS HÀM PUBLIC
+      //------------------------DS HÀM PUBLIC---------------------//
+
+            //hàm lấy ngày giờ và điếm thời gian
         public void NgayGio()
         {
             //get ngày
@@ -37,7 +43,7 @@ namespace GDU_Management
             lblDay.Text = ngay.ToString("dd/MM/yyyy");
             lblDay2.Text = ngay.ToString("dd/MM/yyyy");
 
-            //get thời gian
+            //get thời gian + điếm thời gian
             timerTime_QLSV.Start();
         }
 
@@ -61,8 +67,8 @@ namespace GDU_Management
             dgvDanhSachKhoa.DataSource = khoaService.GetAllKhoa();
         }
 
-        //hàm show dữ liệu dgvKhoa lên textbox
-        public void ShowDataKhoaToTextBox()
+        //hàm show dữ liệu dgv lên textbox
+        public void ShowDataTuDataGridViewToTextBox()
         {
             txtMaKhoa.DataBindings.Clear();
             txtMaKhoa.DataBindings.Add("text", dgvDanhSachKhoa.DataSource, "MaKhoa");
@@ -70,6 +76,7 @@ namespace GDU_Management
             txtTenKhoa.DataBindings.Add("text", dgvDanhSachKhoa.DataSource, "TenKhoa");
         }
 
+        //hàm check data 
         public bool checkDataKHOA()
         {
             if (string.IsNullOrEmpty(txtTenKhoa.Text))
@@ -80,10 +87,10 @@ namespace GDU_Management
             }
             return true;
         }
+
         //KẾT THÚC DS HÀM PUBLIC
 
-
-
+     //--------------------------------------------------------------------------------------//
         private void timerTime_QLSV_Tick(object sender, EventArgs e)
         {
             lblTime.Text = DateTime.Now.ToLongTimeString();
@@ -147,6 +154,14 @@ namespace GDU_Management
             }
         }
 
+        private void frmQuanLySinhVien_Load(object sender, EventArgs e)
+        {
+            LoadDanhSachSinhVienToDatagridview();
+            LoadDanhSachKhoaToDatagridview();
+            ShowDataTuDataGridViewToTextBox();
+
+        }
+
         private void label8_Click(object sender, EventArgs e)
         {
 
@@ -155,6 +170,8 @@ namespace GDU_Management
         private void btnDSNganh_Click(object sender, EventArgs e)
         {
             frmDanhSachNganh frmDSNganh = new frmDanhSachNganh();
+            SendMaKhoaToFrmDanhSachKhoa sendMaKhoa = new SendMaKhoaToFrmDanhSachKhoa(frmDSNganh.FunData);
+            sendMaKhoa(this.txtMaKhoa);
             frmDSNganh.ShowDialog();
         }
 
@@ -201,9 +218,10 @@ namespace GDU_Management
 
         private void dgvDanhSachKhoa_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnSaveKhoa.Enabled = false;
             btnUpdateKhoa.Enabled = true;
             btnDeleteKhoa.Enabled = true;
-            ShowDataKhoaToTextBox();
+            ShowDataTuDataGridViewToTextBox();
         }
 
         private void btnSaveKhoa_Click(object sender, EventArgs e)
@@ -216,13 +234,13 @@ namespace GDU_Management
 
                 khoaService.CreateKhoa(khoa);
                 LoadDanhSachKhoaToDatagridview();
-                MessageBox.Show("Thêm Thành Công...", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thêm Thành Công...", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 btnSaveKhoa.Enabled = false;
             }
             else
             {
-                MessageBox.Show("Lỗi, Thêm Thất Bại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi, Thêm Thất Bại", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -238,33 +256,44 @@ namespace GDU_Management
         private void btnUpdateKhoa_Click(object sender, EventArgs e)
         {
             Khoa kh = new Khoa();
-            kh.TenKhoa = txtTenKhoa.Text.Trim();
+            kh.MaKhoa = txtMaKhoa.Text;
+            kh.TenKhoa = txtTenKhoa.Text;
             khoaService.UpdateKhoa(kh);
-            MessageBox.Show("Update Thành Công", "Thông Báo", MessageBoxButtons.OK);
+            MessageBox.Show("Update Thành Công", "THÔNG BÁO", MessageBoxButtons.OK);
             LoadDanhSachKhoaToDatagridview();
         }
 
         private void btnDeleteKhoa_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("ban co muon xoa khong", "canh bao", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn Có Muốn Xóa '"+ txtMaKhoa.Text +"' ?", "THÔNG BÁO" ,MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 string maKhoa;
                 maKhoa = txtMaKhoa.Text.Trim();
                 if (string.IsNullOrEmpty(txtMaKhoa.Text))
                 {
-                    MessageBox.Show("xoa that bai", "thong bao", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    MessageBox.Show("Xóa Thất Bại", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
                 else
                 {
                     khoaService.DeleteKhoa(maKhoa);
-                    MessageBox.Show("da xoa", "thong bao", MessageBoxButtons.OK);
                     txtMaKhoa.Text = "";
                     txtTenKhoa.Text = "";
-
                     btnNewKhoa.Enabled = true;
+                    btnSaveKhoa.Enabled = false;
+                    btnUpdateKhoa.Enabled = false;
+                    btnDeleteKhoa.Enabled = false;
                     LoadDanhSachKhoaToDatagridview();
+                    MessageBox.Show("Đã Xóa...!!!", "Thông Báo", MessageBoxButtons.OK);
                 }
             }
+        }
+
+        private void dgvDanhSachKhoa_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            btnSaveKhoa.Enabled = false;
+            btnUpdateKhoa.Enabled = true;
+            btnDeleteKhoa.Enabled = true;
+            ShowDataTuDataGridViewToTextBox();
         }
     }
 }

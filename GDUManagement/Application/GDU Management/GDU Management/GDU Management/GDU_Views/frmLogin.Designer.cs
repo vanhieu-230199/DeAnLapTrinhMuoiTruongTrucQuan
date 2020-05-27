@@ -31,14 +31,14 @@
             this.pnContents = new System.Windows.Forms.Panel();
             this.pnSystem = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.lblReset = new System.Windows.Forms.Label();
             this.lblLoginToSYS = new System.Windows.Forms.Label();
             this.grbUsername = new System.Windows.Forms.GroupBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.grbPassword = new System.Windows.Forms.GroupBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.lblReset = new System.Windows.Forms.Label();
             this.pnLogoGDU = new System.Windows.Forms.Panel();
             this.pnContents.SuspendLayout();
             this.pnSystem.SuspendLayout();
@@ -73,13 +73,26 @@
             // 
             // panel1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btnLogin);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Location = new System.Drawing.Point(32, 289);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(332, 55);
             this.panel1.TabIndex = 8;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnLogin.Location = new System.Drawing.Point(175, 5);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(150, 45);
+            this.btnLogin.TabIndex = 3;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnExit
             // 
@@ -93,6 +106,16 @@
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // lblReset
+            // 
+            this.lblReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblReset.Image = global::GDU_Management.Properties.Resources.icons8_available_updates_30;
+            this.lblReset.Location = new System.Drawing.Point(328, 252);
+            this.lblReset.Name = "lblReset";
+            this.lblReset.Size = new System.Drawing.Size(36, 23);
+            this.lblReset.TabIndex = 7;
+            this.lblReset.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblReset_MouseClick);
             // 
             // lblLoginToSYS
             // 
@@ -140,30 +163,6 @@
             this.txtPassword.Size = new System.Drawing.Size(319, 32);
             this.txtPassword.TabIndex = 1;
             // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnLogin.Location = new System.Drawing.Point(175, 5);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(150, 45);
-            this.btnLogin.TabIndex = 3;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // lblReset
-            // 
-            this.lblReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblReset.Image = global::GDU_Management.Properties.Resources.icons8_available_updates_30;
-            this.lblReset.Location = new System.Drawing.Point(328, 252);
-            this.lblReset.Name = "lblReset";
-            this.lblReset.Size = new System.Drawing.Size(36, 23);
-            this.lblReset.TabIndex = 7;
-            this.lblReset.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblReset_MouseClick);
-            // 
             // pnLogoGDU
             // 
             this.pnLogoGDU.BackgroundImage = global::GDU_Management.Properties.Resources.logo;
@@ -181,6 +180,7 @@
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(908, 442);
             this.Controls.Add(this.pnContents);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLogin";
             this.Text = "Login to System";
             this.pnContents.ResumeLayout(false);

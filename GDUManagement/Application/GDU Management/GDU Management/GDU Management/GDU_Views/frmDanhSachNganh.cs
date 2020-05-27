@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GDU_Management.IDao;
+using GDU_Management.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +18,52 @@ namespace GDU_Management
         {
             InitializeComponent();
         }
+        //
+        
+        
+       
 
+        //khai báo các service 
+        NganhHocService nganhHocService = new NganhHocService();  
+
+        //Danh Sách Hàm PUBLIC
+
+            //load danh sách ngành vào dgv
+        public void LoadDanhSachNganh()
+        {
+            string maKhoa;
+            maKhoa = lblMaKhoa.Text;
+              dgvDSNganh.DataSource = nganhHocService.GetNganhHocByKHOA(maKhoa);
+
+        }
+
+        //load data lên textbox
+        public void ShowDataTuDataGridViewToTextBox()
+        {
+            txtMaNganh.DataBindings.Clear();
+            txtMaNganh.DataBindings.Add("text", dgvDSNganh.DataSource, "MaNganh");
+            txtTenNganh.DataBindings.Clear();
+            txtTenNganh.DataBindings.Add("text", dgvDSNganh.DataSource, "TenNganh");
+        }
+
+        //check data
+        public bool checkDataNGANH()
+        {
+            if (string.IsNullOrEmpty(txtTenNganh.Text))
+            {
+                MessageBox.Show("Tên Ngành Không được bỏ trống, vui lòng kiểm tra lại...");
+                txtTenNganh.Focus();
+                return false;
+            }
+            return true;
+        }
+        //Kết Thúc Danh sách Hàm PUBLIC
+
+
+        public void FunData(TextBox txtFrmDanhSachKhoa)
+        {
+            lblMaKhoa.Text = txtFrmDanhSachKhoa.Text;
+        }
         private void pnDanhSachNganh_Paint(object sender, PaintEventArgs e)
         {
 
@@ -25,6 +72,21 @@ namespace GDU_Management
         private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmDanhSachNganh_Load(object sender, EventArgs e)
+        {
+            LoadDanhSachNganh();
+        }
+
+        private void dgvDSNganh_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            ShowDataTuDataGridViewToTextBox();
+        }
+
+        private void btnSaveNganh_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -95,6 +95,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1129, 573);
             this.Controls.Add(this.pnAccount);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmAccount";
             this.Text = "Account";
             this.pnAccount.ResumeLayout(false);

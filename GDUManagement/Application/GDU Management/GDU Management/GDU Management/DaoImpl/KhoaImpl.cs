@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Forms;
 
 namespace GDU_Management.DaoImpl
 {
@@ -61,15 +61,8 @@ namespace GDU_Management.DaoImpl
             db = new GDUDataConnectionsDataContext();
             Khoa kh = new Khoa();
             kh = db.Khoas.Single(x => x.MaKhoa == khoa.MaKhoa);
-            setKhoaUpdate(kh, khoa);
+            kh.TenKhoa = khoa.TenKhoa;
             db.SubmitChanges();
-        }
-
-        public Khoa setKhoaUpdate(Khoa khoaDB, Khoa khoaUpdate)
-        {
-            db = new GDUDataConnectionsDataContext();
-            khoaDB.TenKhoa = khoaUpdate.TenKhoa;
-            return khoaDB;
         }
     }
 }

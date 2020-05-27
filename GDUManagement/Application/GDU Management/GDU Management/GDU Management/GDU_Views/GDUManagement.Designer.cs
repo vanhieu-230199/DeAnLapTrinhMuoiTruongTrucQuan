@@ -137,11 +137,12 @@
             this.pnControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnControl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnControl.Controls.Add(this.btnDangXuat);
             this.pnControl.Controls.Add(this.btnThoatChuongTrinh);
             this.pnControl.Location = new System.Drawing.Point(615, 520);
             this.pnControl.Name = "pnControl";
-            this.pnControl.Size = new System.Drawing.Size(471, 65);
+            this.pnControl.Size = new System.Drawing.Size(471, 55);
             this.pnControl.TabIndex = 13;
             // 
             // btnDangXuat
@@ -150,7 +151,7 @@
             this.btnDangXuat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDangXuat.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangXuat.ForeColor = System.Drawing.Color.White;
-            this.btnDangXuat.Location = new System.Drawing.Point(6, 8);
+            this.btnDangXuat.Location = new System.Drawing.Point(6, 3);
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.Size = new System.Drawing.Size(215, 50);
             this.btnDangXuat.TabIndex = 8;
@@ -511,6 +512,7 @@
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(1169, 634);
             this.Controls.Add(this.pnContents);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GDUManagement";
             this.Text = " GDU Management";
             this.Load += new System.EventHandler(this.GDUManagement_Load);
@@ -552,7 +554,6 @@
         private System.Windows.Forms.Panel pnLogo;
         private System.Windows.Forms.Panel pnMenu;
         private System.Windows.Forms.Panel pnStatusTopLeft;
-        private System.Windows.Forms.Panel pnControl;
         private System.Windows.Forms.Label lblVersion;
         private System.Windows.Forms.GroupBox grbTime;
         private System.Windows.Forms.Label lblTime;
@@ -579,5 +580,6 @@
         private System.Windows.Forms.Label lblIconMonHoc_Diem;
         private System.Windows.Forms.Timer timerChayChu;
         private System.Windows.Forms.Label lblLogoGDU;
+        private System.Windows.Forms.Panel pnControl;
     }
 }

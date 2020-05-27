@@ -12,29 +12,77 @@ namespace GDU_Management.DaoImpl
     class NganhHocImpl : IDaoNganhHoc
     {
         //tao ket noi database
-        GDUDataConnectionsDataContext db = new GDUDataConnectionsDataContext();
-        List<NganhHoc> nganhHoc;
+        GDUDataConnectionsDataContext db;
+        List<NganhHoc> nganhHocs;
 
+        //lấy database từ cơ sở dữ liệu
+        public NganhHocImpl()
+        {
+            db = new GDUDataConnectionsDataContext();
+            using (db)
+            {
+                var nganhHoc = from x in db.NganhHocs select x;
+                db.DeferredLoadingEnabled = true;
+                nganhHocs = nganhHoc.ToList();
+            }
+        }
         public NganhHoc CreateNganhHoc(NganhHoc nganhHoc)
         {
-            //code content
-            return null;
+            db = new GDUDataConnectionsDataContext();
+            NganhHoc nh = new NganhHoc();
+            nh = nganhHoc;
+            db.NganhHocs.InsertOnSubmit(nh);
+            db.SubmitChanges();
+            return nh;
         }
 
         public void DeleteNganhHoc(string maNganhHoc)
         {
-            //code content    return null;
+            db = new GDUDataConnectionsDataContext();
+            NganhHoc nh = new NganhHoc();
+            nh = db.NganhHocs.Single(x => x.MaNganh == maNganhHoc);
+            db.SubmitChanges();
         }
 
         public List<NganhHoc> GetAllNganhhoc()
         {
-            //code content
             return null;
         }
 
+        // lấy ngành học theo KHOA
+        //public NganhHoc GetNganhHocByKHOA(string maKhoa)
+        //{
+        //    db = new GDUDataConnectionsDataContext();
+        //    NganhHoc nganhHoc = new NganhHoc();
+        //    nganhHocs.ForEach(nganh =>
+        //    {
+        //        if( nganh.MaKhoa == maKhoa)
+        //        {
+        //            nganhHoc = nganh;
+        //        }
+        //    });
+        //    return nganhHoc;
+        //}
+
         public void UpdateNganhHoc(NganhHoc nganhHoc)
         {
-            //code content
+
+            db = new GDUDataConnectionsDataContext();
+            NganhHoc nh = new NganhHoc();
+            nh = db.NganhHocs.Single(x => x.MaNganh == nganhHoc.MaNganh);
+            nh.TenNganh = nganhHoc.TenNganh;
+            db.SubmitChanges();
+        }
+
+        List<NganhHoc> IDaoNganhHoc.GetNganhHocByKHOA(string maKhoa)
+        {
+            db = new GDUDataConnectionsDataContext();
+            var nganhHoc  =  from x in db.NganhHocs where x.MaKhoa == maKhoa select x;
+            nganhHocs = nganhHoc.ToList();
+            //db = new GDUDataConnectionsDataContext();
+            //var k = from x in db.Khoas select x;
+            //khoas = k.ToList
+            return nganhHocs;
         }
     }
 }
