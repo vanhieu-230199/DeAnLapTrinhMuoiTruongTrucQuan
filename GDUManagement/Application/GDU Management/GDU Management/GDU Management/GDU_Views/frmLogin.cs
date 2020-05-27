@@ -32,9 +32,7 @@ namespace GDU_Management
      
         private void lblReset_MouseClick(object sender, MouseEventArgs e)
         {
-            txtUsername.Text = "";
-            txtPassword.Text = "";
-            //btnLogin.Enabled = false;
+          
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -52,6 +50,11 @@ namespace GDU_Management
             {
                 Application.Exit();
             }          
+        }
+
+        private void lblReset_Click(object sender, EventArgs e)
+        {
+            txtPassword.Text = "";
         }
     }
 }

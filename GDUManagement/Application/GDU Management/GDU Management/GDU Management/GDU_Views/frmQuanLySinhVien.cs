@@ -74,6 +74,11 @@ namespace GDU_Management
             txtMaKhoa.DataBindings.Add("text", dgvDanhSachKhoa.DataSource, "MaKhoa");
             txtTenKhoa.DataBindings.Clear();
             txtTenKhoa.DataBindings.Add("text", dgvDanhSachKhoa.DataSource, "TenKhoa");
+
+            lblMaKhoa.DataBindings.Clear();
+            lblMaKhoa.DataBindings.Add("text", dgvDanhSachKhoa.DataSource, "MaKhoa");
+            lblTenKhoa.DataBindings.Clear();
+            lblTenKhoa.DataBindings.Add("text", dgvDanhSachKhoa.DataSource, "TenKhoa");
         }
 
         //hàm check data 
@@ -259,7 +264,7 @@ namespace GDU_Management
             kh.MaKhoa = txtMaKhoa.Text;
             kh.TenKhoa = txtTenKhoa.Text;
             khoaService.UpdateKhoa(kh);
-            MessageBox.Show("Update Thành Công", "THÔNG BÁO", MessageBoxButtons.OK);
+            MessageBox.Show("Cập nhật thông tin '"+txtMaKhoa+"' Thành Công", "THÔNG BÁO", MessageBoxButtons.OK,MessageBoxIcon.Information);
             LoadDanhSachKhoaToDatagridview();
         }
 

@@ -111,10 +111,11 @@
             // 
             this.lblReset.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblReset.Image = global::GDU_Management.Properties.Resources.icons8_available_updates_30;
-            this.lblReset.Location = new System.Drawing.Point(328, 252);
+            this.lblReset.Location = new System.Drawing.Point(364, 204);
             this.lblReset.Name = "lblReset";
-            this.lblReset.Size = new System.Drawing.Size(36, 23);
+            this.lblReset.Size = new System.Drawing.Size(43, 32);
             this.lblReset.TabIndex = 7;
+            this.lblReset.Click += new System.EventHandler(this.lblReset_Click);
             this.lblReset.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblReset_MouseClick);
             // 
             // lblLoginToSYS
@@ -140,9 +141,10 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Yi Baiti", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(6, 32);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(319, 32);
+            this.txtUsername.Size = new System.Drawing.Size(319, 31);
             this.txtUsername.TabIndex = 0;
             // 
             // grbPassword
@@ -158,9 +160,11 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Yi Baiti", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(7, 31);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(319, 32);
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(319, 31);
             this.txtPassword.TabIndex = 1;
             // 
             // pnLogoGDU
@@ -181,6 +185,7 @@
             this.ClientSize = new System.Drawing.Size(908, 442);
             this.Controls.Add(this.pnContents);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "frmLogin";
             this.Text = "Login to System";
             this.pnContents.ResumeLayout(false);

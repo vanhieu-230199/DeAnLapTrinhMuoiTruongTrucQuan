@@ -26,6 +26,7 @@ namespace GDU_Management.DaoImpl
                 nganhHocs = nganhHoc.ToList();
             }
         }
+        // thêm ngành
         public NganhHoc CreateNganhHoc(NganhHoc nganhHoc)
         {
             db = new GDUDataConnectionsDataContext();
@@ -36,11 +37,13 @@ namespace GDU_Management.DaoImpl
             return nh;
         }
 
+        //xóa ngành
         public void DeleteNganhHoc(string maNganhHoc)
         {
             db = new GDUDataConnectionsDataContext();
             NganhHoc nh = new NganhHoc();
             nh = db.NganhHocs.Single(x => x.MaNganh == maNganhHoc);
+            db.NganhHocs.DeleteOnSubmit(nh);
             db.SubmitChanges();
         }
 
@@ -64,6 +67,7 @@ namespace GDU_Management.DaoImpl
         //    return nganhHoc;
         //}
 
+            //cập nhật ngành
         public void UpdateNganhHoc(NganhHoc nganhHoc)
         {
 

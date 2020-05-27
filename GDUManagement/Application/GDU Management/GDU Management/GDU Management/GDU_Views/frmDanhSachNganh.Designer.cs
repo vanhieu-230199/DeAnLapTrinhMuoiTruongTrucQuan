@@ -107,7 +107,6 @@
             // 
             this.txtMaNganh.Location = new System.Drawing.Point(131, 51);
             this.txtMaNganh.Name = "txtMaNganh";
-            this.txtMaNganh.ReadOnly = true;
             this.txtMaNganh.Size = new System.Drawing.Size(156, 22);
             this.txtMaNganh.TabIndex = 2;
             // 
@@ -226,6 +225,7 @@
             this.btnDeleteNganh.Size = new System.Drawing.Size(140, 45);
             this.btnDeleteNganh.TabIndex = 6;
             this.btnDeleteNganh.UseVisualStyleBackColor = false;
+            this.btnDeleteNganh.Click += new System.EventHandler(this.btnDeleteNganh_Click);
             // 
             // btnNewNganh
             // 
@@ -236,6 +236,7 @@
             this.btnNewNganh.Size = new System.Drawing.Size(140, 45);
             this.btnNewNganh.TabIndex = 3;
             this.btnNewNganh.UseVisualStyleBackColor = false;
+            this.btnNewNganh.Click += new System.EventHandler(this.btnNewNganh_Click);
             // 
             // btnUpdateNganh
             // 
@@ -246,6 +247,7 @@
             this.btnUpdateNganh.Size = new System.Drawing.Size(140, 45);
             this.btnUpdateNganh.TabIndex = 5;
             this.btnUpdateNganh.UseVisualStyleBackColor = false;
+            this.btnUpdateNganh.Click += new System.EventHandler(this.btnUpdateNganh_Click);
             // 
             // btnSaveNganh
             // 

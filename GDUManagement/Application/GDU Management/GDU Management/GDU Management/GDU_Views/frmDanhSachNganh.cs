@@ -1,4 +1,5 @@
 ﻿using GDU_Management.IDao;
+using GDU_Management.Model;
 using GDU_Management.Service;
 using System;
 using System.Collections.Generic;
@@ -20,9 +21,6 @@ namespace GDU_Management
         }
         //
         
-        
-       
-
         //khai báo các service 
         NganhHocService nganhHocService = new NganhHocService();  
 
@@ -51,7 +49,7 @@ namespace GDU_Management
         {
             if (string.IsNullOrEmpty(txtTenNganh.Text))
             {
-                MessageBox.Show("Tên Ngành Không được bỏ trống, vui lòng kiểm tra lại...");
+                MessageBox.Show("Tên Ngành Không được bỏ trống, vui lòng kiểm tra lại..." , "Cảnh Báo" , MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtTenNganh.Focus();
                 return false;
             }
@@ -77,16 +75,76 @@ namespace GDU_Management
         private void frmDanhSachNganh_Load(object sender, EventArgs e)
         {
             LoadDanhSachNganh();
+            ShowDataTuDataGridViewToTextBox();
         }
 
         private void dgvDSNganh_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             ShowDataTuDataGridViewToTextBox();
+            btnSaveNganh.Enabled = false;
+            btnUpdateNganh.Enabled = true;
+            btnDeleteNganh.Enabled = true;
         }
 
         private void btnSaveNganh_Click(object sender, EventArgs e)
         {
+            if (checkDataNGANH())
+            {
+                NganhHoc nganhHoc = new NganhHoc();
+                nganhHoc.MaNganh = txtMaNganh.Text;
+                nganhHoc.TenNganh = txtTenNganh.Text;
+                nganhHoc.MaKhoa = lblMaKhoa.Text;
+                nganhHocService.CreateNganhHoc(nganhHoc);
+                MessageBox.Show("Tạo Mới Thành Công...(^...^) ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnSaveNganh.Enabled = false;
+                LoadDanhSachNganh();
+            }
+            else
+            {
+                MessageBox.Show("Lỗi, Thêm Thất Bại", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
+        private void btnDeleteNganh_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn Có Muốn Xóa '" + txtMaNganh.Text + "' ?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                string maNganh = txtMaNganh.Text.Trim();
+                if (string.IsNullOrEmpty(txtMaNganh.Text))
+                {
+                    MessageBox.Show("Xóa Thất Bại", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    nganhHocService.DeleteNganhHoc(maNganh);
+                    txtMaNganh.Text = "";
+                    txtTenNganh.Text = ""; 
+                    btnSaveNganh.Enabled = false;
+                    btnUpdateNganh.Enabled = false;
+                    btnDeleteNganh.Enabled = false;
+                    LoadDanhSachNganh();
+                    MessageBox.Show("Đã Xóa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnUpdateNganh_Click(object sender, EventArgs e)
+        {
+            NganhHoc nganhHoc = new NganhHoc();
+            nganhHoc.MaNganh = txtMaNganh.Text;
+            nganhHoc.TenNganh = txtTenNganh.Text;
+            nganhHocService.UpdateNganhHoc(nganhHoc);
+            MessageBox.Show("Cập nhật thông tin '" + txtMaNganh.Text + "' Thành Công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            LoadDanhSachNganh();
+        }
+
+        private void btnNewNganh_Click(object sender, EventArgs e)
+        {
+            txtMaNganh.Text = "";
+            txtTenNganh.Text = "";
+            btnSaveNganh.Enabled = true;
+            btnUpdateNganh.Enabled = false;
+            btnDeleteNganh.Enabled = false;
         }
     }
 }
