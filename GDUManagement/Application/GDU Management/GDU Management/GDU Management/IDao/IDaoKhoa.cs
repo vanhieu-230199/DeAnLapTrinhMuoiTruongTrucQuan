@@ -14,5 +14,6 @@ namespace GDU_Management.IDao
         void DeleteKhoa(string maKhoa);
         void UpdateKhoa(Khoa khoa);
 
+
     }
 }
