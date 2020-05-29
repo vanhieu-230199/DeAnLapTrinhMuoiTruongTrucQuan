@@ -1,4 +1,6 @@
 ﻿using System;
+using GDU_Management.Model;
+using GDU_Management.Service;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,9 +21,26 @@ namespace GDU_Management
         }
 
         //CÁC HÀM PUBLIC
-        
+        MonHocService monHocService = new MonHocService();
+        DiemMonHocService diemMonHocService = new DiemMonHocService();
 
+        //load danh sach môn học lên datagridview
+        public void LoadDanhSachMonHocToDatagridview()
+        {
+            dgvDanhSachMonHoc.DataSource = monHocService.GetAllMonHoc();
+        }
+        public void LoadDanhSachDiemSinhVienToDatagridview()
+        {
+            dgvDanhSachDiemSinhVien.DataSource = diemMonHocService.GetAllDiemMonHoc();
+        }
         //1-Hàm lấy thời gian
+        public void ShowDataTuDataGridViewToTextBox()
+        {
+            txtMaMon.DataBindings.Clear();
+            txtMaMon.DataBindings.Add("text", dgvDanhSachMonHoc.DataSource, "MaMon");
+            txtTenMon.DataBindings.Clear();
+            txtTenMon.DataBindings.Add("text", dgvDanhSachMonHoc.DataSource, "TenMon");
+        }
         public void NgayGio()
         {
             //get ngày
@@ -104,6 +123,12 @@ namespace GDU_Management
         private void btnHomQLD_Click(object sender, EventArgs e)
         {
             GoToGDUmanagement();
+        }
+
+        private void frmDiemAndMonHoc_Load(object sender, EventArgs e)
+        {
+            LoadDanhSachMonHocToDatagridview();
+            LoadDanhSachDiemSinhVienToDatagridview();
         }
     }
 }

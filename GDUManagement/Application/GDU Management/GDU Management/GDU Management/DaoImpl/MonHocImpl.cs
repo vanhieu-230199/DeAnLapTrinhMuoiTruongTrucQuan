@@ -27,8 +27,9 @@ namespace GDU_Management.DaoImpl
 
         public List<MonHoc> GetAllMonHoc()
         {
-            //code content
-            return null;
+            var mh = from x in db.MonHocs select x;
+            monHoc = mh.ToList();
+            return monHoc;
         }
 
         public void UpdateMonHoc(MonHoc monHoc)

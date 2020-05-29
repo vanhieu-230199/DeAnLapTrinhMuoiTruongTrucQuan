@@ -63,7 +63,7 @@ namespace GDU_Management.Model
     #endregion
 		
 		public GDUDataConnectionsDataContext() : 
-				base(global::GDU_Management.Properties.Settings.Default.GDUmanagementConnectionString, mappingSource)
+				base(global::GDU_Management.Properties.Settings.Default.GDUmanagementConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
